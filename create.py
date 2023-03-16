@@ -10,7 +10,7 @@ cursor = connection.cursor()
 # web application
 app = Flask(__name__)
 
-@app.route('/createform')
+@app.route('/createform') #route to create the form to receive data from the browser and send it to the database
 def add():
         return render_template('create.html')
 #we want to be able to catch what the user inputs in the form through the submit button
@@ -36,8 +36,8 @@ def create():
         country_s = education['country_s']
         college_id = education['college_id']
         # insert data into table
-        cursor.execute("INSERT INTO colleges VALUES (?, ?, ?, ?, ?, ?)", (college_id, name, students, city, region, country))
-        cursor.execute("INSERT INTO students VALUES (?, ?, ?, ?, ?, ?, ?, ?)", (student_id, firstname, lastname, birth_date, email, city_s, region_s, country_s, college_id))
+        cursor.execute(f"INSERT INTO colleges VALUES (?, ?, ?, ?, ?, ?)", (college_id, name, students, city, region, country))
+        cursor.execute(f"INSERT INTO students VALUES (?, ?, ?, ?, ?, ?, ?, ?)", (student_id, firstname, lastname, birth_date, email, city_s, region_s, country_s, college_id))
         connection.commit()
         return redirect('/read')
 #start server

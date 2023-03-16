@@ -17,7 +17,7 @@ def add():
 @app.route('/create', methods=['POST']) #we want to be able to catch what the user inputs in the form through the submit button
 def create():
         # get data from form Colleges and Students
-        education = request.form
+        education = request.form 
         #for Colleges 
         college_id = education['college_id'] 
         name = education['name']
@@ -38,8 +38,8 @@ def create():
         # insert data into table
         cursor.execute(f"INSERT INTO colleges VALUES (?, ?, ?, ?, ?, ?)", (college_id, name, students, city, region, country))
         cursor.execute(f"INSERT INTO students VALUES (?, ?, ?, ?, ?, ?, ?, ?)", (student_id, firstname, lastname, birth_date, email, city_s, region_s, country_s, college_id))
-        connection.commit()
-        return redirect('/read')
+        connection.commit() #save changes
+        return redirect('/read') #redirect to the read page
 #start server
 if __name__ == '__main__':
         app.run(debug=True, port=5000)

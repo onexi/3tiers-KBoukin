@@ -10,7 +10,10 @@
 			"extensions": [
 				"GitHub.copilot",
 				"MS-vsliveshare.vsliveshare"
-			]
+			],
+			"env": {
+				"CLOUD_WORKSPACE_URL": "https://your-cloud-workspace-url"
+			  }
 		}
 	},
 

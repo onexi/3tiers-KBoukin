@@ -1,11 +1,13 @@
 #Create the input html form to delete colleges and students from the database based on the college_id and student_id
 
 import sqlite3
-from flask import Flask, render_template, request, redirect
-
+from flask import Flask, render_template, request, redirect, url_for
+import os
 # connect to db and get cursor
 connection = sqlite3.connect("data/education.db", check_same_thread=False)
 cursor = connection.cursor()
+
+cloud_workspace_url = os.environ.get('CLOUD_WORKSPACE_URL')
 
 # web application
 app = Flask(__name__)
@@ -26,7 +28,7 @@ def delete():
         cursor.execute(f"DELETE FROM colleges WHERE college_id = ?", [college_id])
         cursor.execute(f"DELETE FROM students WHERE student_id = ?", [student_id])
         connection.commit()
-        return redirect('/read')
+        return redirect('/read') #redirect to the read page
 
 #start server
 if __name__ == '__main__':

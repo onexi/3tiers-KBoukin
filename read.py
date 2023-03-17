@@ -6,10 +6,13 @@ from flask import Flask, render_template, request, redirect
 connection = sqlite3.connect("data/education.db", check_same_thread=False)
 cursor = connection.cursor()
 
+import os
+print(os.getcwd())
+
 # web application
 app = Flask(__name__)
 
-@app.route('/read') #route to read the data in the “colleges” and “students” table
+@app.route('/read') #route to create the form to receive data from the browser and send it to the database
 def read():
         # get data from table
         cursor.execute("SELECT * FROM colleges")

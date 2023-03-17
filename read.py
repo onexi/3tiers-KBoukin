@@ -9,7 +9,7 @@ cursor = connection.cursor()
 # web application
 app = Flask(__name__)
 
-@app.route('/read', methods=['GET']) #route to read the data in the “colleges” and “students” table
+@app.route('/read') #route to read the data in the “colleges” and “students” table
 def read():
         # get data from table
         cursor.execute("SELECT * FROM colleges")

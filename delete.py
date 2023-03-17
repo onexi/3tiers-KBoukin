@@ -11,7 +11,7 @@ cursor = connection.cursor()
 app = Flask(__name__)
 
 @app.route('/deleteform') #route to create the form to receive data from the browser and send it to the database
-def delete():
+def deleteform():
         return render_template('delete.html')
 
 @app.route('/delete', methods=['POST']) #we want to be able to catch what the user inputs in the form through the submit button

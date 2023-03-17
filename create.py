@@ -1,6 +1,6 @@
 #Create the server and route to receive data from the browser and send it to the database
 # imports
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
 from datetime import datetime
 
@@ -44,6 +44,7 @@ def create():
         cursor.execute(f"INSERT INTO students VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", (student_id, firstname, lastname, birth_date, email, city_s, region_s, country_s, college_id))
         print(cursor.execute(f"INSERT INTO students VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", (student_id, firstname, lastname, birth_date, email, city_s, region_s, country_s, college_id))) #print to check
         connection.commit() #save changes
+        print("Redirecting to read page...")
         return redirect('/read') #redirect to the read page
 #start server
 if __name__ == '__main__':

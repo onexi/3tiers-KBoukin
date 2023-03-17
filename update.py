@@ -11,7 +11,7 @@ cursor = connection.cursor()
 app = Flask(__name__)
 
 @app.route('/updateform') #route to create the form to receive data from the browser and send it to the database
-def update():
+def updateform():
         return render_template('update.html')
 
 @app.route('/update', methods=['POST']) #we want to be able to catch what the user inputs in the form through the submit button

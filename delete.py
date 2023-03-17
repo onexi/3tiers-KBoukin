@@ -7,7 +7,7 @@ import os
 connection = sqlite3.connect("data/education.db", check_same_thread=False)
 cursor = connection.cursor()
 
-cloud_workspace_url = os.environ.get('CLOUD_WORKSPACE_URL')
+codespace_url = "https://" + os.environ["HOSTNAME"]
 
 # web application
 app = Flask(__name__)

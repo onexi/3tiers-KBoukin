@@ -1,88 +1,43 @@
 <table border= 1 >
     <tbody>
         <tr>
-            {% for college in colleges %}
             <td>
             <h2>College Data</h2> 
             <table border= 1 >
                 <tbody>
-                    <tr>
-                        <td>
-                            <label for="college_id">College ID:</label>
-                            <input type="text" id="college_id" name="college_id" value="{{ college.college_id }}" readonly>
-                        </td>
-                        <td>
-                            <label for="name">Name:</label>
-                            <input type="text" id="name" name="name" value="{{ college.name }}" readonly>
-                         </td>
-                         <td>
-                            <label for="students">Students:</label>
-                            <input type="text" id="students" name="students" value="{{ college.students }}" readonly>
-                        </td>
-                        <td>
-                            <label for="city">City:</label>
-                            <input type="text" id="city" name="city" value="{{ college.city }}" readonly>
-                        </td>
-                        <td>
-                            <label for="region">Region:</label>
-                            <input type="text" id="region" name="region" value="{{ college.region }}" readonly>
-                        </td>
-                        <td>
-                            <label for="country">Country:</label>
-                            <input type="text" id="country" name="country" value="{{ college.country }}" readonly>
-                        </td>
-                    </tr>
+                    {% for college in colleges %}
+                        <tr>
+                            <td>{{ college[0] }}</td>
+                            <td>{{ college[1] }}</td>
+                            <td>{{ college[2] }}</td>
+                            <td>{{ college[3] }}</td>
+                            <td>{{ college[4] }}</td>
+                            <td>{{ college[5] }}</td>
+                        </tr>
+                    {% endfor %}
                 </tbody>
             </table>
             </td>
-            {% endfor %}
-            {% for student in students %}
             <td style="vertical-align: top; padding-left: 10px;">
                 <h2>Student Data</h2>
                 <table border= 1 >
                     <tbody>
-                        <tr>
-                            <td>
-                                <label for="students_id">Student ID:</label>
-                                <input type="text" id="students_id" name="students_id" value="{{ student.students_id }}" readonly>
-                            </td>
-                            <td>
-                                <label for="firstname">First Name:</label>
-                                <input type="text" id="firstname" name="firstname" value="{{ student.firstname }}" readonly>
-                            </td>  
-                            <td>
-                                <label for="lastname">Last Name:</label>
-                                <input type="text" id="lastname" name="lastname" value="{{ student.lastname }}" readonly>
-                            </td>
-                            <td>
-                                <label for="birth_date">Birth Date:</label>
-                                <input type="text" id="birth_date" name="birth_date" value="{{ student.birth_date }}" readonly>
-                            </td>   
-                            <td>
-                                <label for="email">Email:</label>
-                                <input type="text" id="email" name="email" value="{{ student.email }}" readonly>
-                            </td>
-                            <td>
-                                <label for="city_s">City:</label>
-                                <input type="text" id="city_s" name="city_s" value="{{ student.city_s }}" readonly>
-                            </td>
-                            <td>
-                                <label for="region_s">Region:</label>
-                                <input type="text" id="region_s" name="region_s" value="{{ student.region_s }}" readonly>
-                            </td>
-                            <td>
-                                <label for="country_s">Country:</label>
-                                <input type="text" id="country_s" name="country_s" value="{{ student.country_s }}" readonly>
-                            </td>
-                            <td>
-                                <label for="college_id">College ID:</label>
-                                <input type="text" id="college_id" name="college_id" value="{{ student.college_id }}" readonly>
-                            </td>
-                        </tr>
+                        {% for student in students %}
+                            <tr>
+                                <td>{{ student[0] }}</td>
+                                <td>{{ student[1] }}</td>
+                                <td>{{ student[2] }}</td>
+                                <td>{{ student[3] }}</td>
+                                <td>{{ student[4] }}</td>
+                                <td>{{ student[5] }}</td>
+                                <td>{{ student[6] }}</td>
+                                <td>{{ student[7] }}</td>
+                                <td>{{ student[8] }}</td>
+                            </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </td>
-            {% endfor %}
         </tr>
     </tbody>
 </table>

@@ -9,7 +9,7 @@ connection = sqlite3.connect("data/education.db", check_same_thread=False)
 cursor = connection.cursor()
 
 # web application
-app = Flask(__name__)
+#app = Flask(__name__)
 
 @app.route('/createform') #route to create the form to receive data from the browser and send it to the database
 def add():

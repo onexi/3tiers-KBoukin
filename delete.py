@@ -10,7 +10,7 @@ cursor = connection.cursor()
 codespace_url = "https://" + os.environ["HOSTNAME"]
 
 # web application
-app = Flask(__name__)
+#app = Flask(__name__)
 
 @app.route('/deleteform') #route to create the form to receive data from the browser and send it to the database
 def deleteform():

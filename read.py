@@ -10,7 +10,7 @@ import os
 print(os.getcwd())
 
 # web application
-app = Flask(__name__)
+#app = Flask(__name__)
 
 @app.route('/read') #route to create the form to receive data from the browser and send it to the database
 def read():

@@ -39,7 +39,7 @@ def update():
         cursor.execute(f"UPDATE colleges SET name = ?, students = ?, city = ?, region = ?, country = ? WHERE college_id = ?", (name, students, city, region, country, college_id))
         cursor.execute(f"UPDATE students SET firstname = ?, lastname = ?, birth_date = ?, email = ?, city_s = ?, region_s = ?, country_s = ?, college_id = ? WHERE student_id = ?", (firstname, lastname, birth_date, email, city_s, region_s, country_s, college_id, student_id))
         connection.commit()
-        return redirect('/read') #redirect to the read page
+        return redirect('/read', code=303) #redirect to the read page
 
 #start server
 if __name__ == '__main__':

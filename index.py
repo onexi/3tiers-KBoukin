@@ -18,7 +18,7 @@ def post_redirect_get():
                 elif request.form['submit'] == 'update':
                         return redirect('/updateform', code=303)
                 elif request.form['submit'] == 'create':
-                        return redirect('/createform', code=303)
+                        return redirect('/createform',  code=303)
 
 
 if __name__ == '__main__':

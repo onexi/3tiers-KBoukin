@@ -19,12 +19,12 @@ def delete():
         # get data from form Colleges and Students
         education = request.form
         #for Colleges 
-        college_id = education['college_id'] 
+        college_id = int(education['college_id'])
         #for Students
-        student_id = education['student_id']
+        student_id = int(education['student_id'])
         # delete data from table
-        cursor.execute(f"DELETE FROM colleges WHERE college_id = ?", (college_id))
-        cursor.execute(f"DELETE FROM students WHERE student_id = ?", (student_id))
+        cursor.execute(f"DELETE FROM colleges WHERE college_id = ?", [college_id])
+        cursor.execute(f"DELETE FROM students WHERE student_id = ?", [student_id])
         connection.commit()
         return redirect('/read')
 

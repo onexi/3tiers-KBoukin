@@ -13,20 +13,20 @@ c = conn.cursor()
 
 #create table students
 c.execute("""CREATE TABLE students (
-	`studentID` 		int NULL,
-	`collegeID` 		int NULL,	
-	`firstName` 		varchar (20) NULL ,
-	`lastName` 			varchar (20) NULL ,	
-	`birthDate` 		date NULL ,	
+	`student_id` 		int NULL,
+	`college_id` 		int NULL,	
+	`firstname` 		varchar (20) NULL ,
+	`lastname` 			varchar (20) NULL ,	
+	`birth_date` 		date NULL ,	
 	`email` 			varchar (30) NULL ,
-	`city` 				varchar (15) NULL ,
-	`region` 			varchar (15) NULL ,
-	`country` 			varchar (15) NULL
+	`city_s` 				varchar (15) NULL ,
+	`region_s` 			varchar (15) NULL ,
+	`country_s` 			varchar (15) NULL
 )""")
 
 #create table colleges
 c.execute("""CREATE TABLE colleges (
-    `collegeID` 		int NULL,
+    `college_id` 		int NULL,
 	`name` 				varchar (20) NULL,
 	`students` 			int NULL,	
 	`city` 				varchar (15) NULL ,
